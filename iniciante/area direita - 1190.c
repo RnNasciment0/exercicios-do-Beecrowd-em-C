@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(){
+    float soma = 0;
+    char operacao;
+    float matriz[12][12];
+    scanf("%c", &operacao);
+    for (int i = 0; i < 12; i++){
+        for (int j = 0; j < 12; j++){
+            scanf("%f", &matriz[i][j]);
+        }
+    }
+    if (operacao == 'S'){
+        for (int i = 0; i < 12; i++){
+            for (int j = 0; j < 12; j++){
+                if (j > i & j+i > 11){
+                    soma += matriz[i][j];
+                }
+            }
+        }
+        printf("%.1f\n", soma);
+    } else if (operacao == 'M'){
+        for (int i = 0; i < 12; i++){
+            for (int j = 0; j < 12; j++){
+                if (j > i & j+i > 11){
+                    soma += matriz[i][j];
+                }
+            }
+        }
+        soma /= 66;
+        printf("%.1f\n", soma);
+    }
+    return 0;
+}
